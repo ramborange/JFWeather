@@ -10,10 +10,10 @@
 #define JFWeatherHeader_h
 
 //weather key
-//和风天气
+//天气API appKey
 #define weatherKey          @"2a678202baf646758822ff282350d139"
 //weather.com
-#define weatherKey2         @"f57fa7b78b46426d51003c46527e0853"
+#define weatherKey2         @"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 //聚合数据天气API
 #define juHeWeather         @"http://op.juhe.cn/onebox/weather/query"
 

@@ -1,0 +1,53 @@
+//
+//  JFWeatherPrefixHeader.pch
+//  JFWeather
+//
+//  Created by ramborange on 16/7/22.
+//  Copyright © 2016年 BlueSky. All rights reserved.
+//
+
+#ifndef JFWeatherPrefixHeader_pch
+#define JFWeatherPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+
+//3rd libs
+#import "APPDelegate.h"
+#import "JFWeatherHeader.h"
+#import "AFNetworking.h"
+#import "FMDB.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import "pop.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+GIF.h"
+#import "SDWebImageManager.h"
+#import "UIButton+WebCache.h"
+#import "SVProgressHUD.h"
+#import "NSDictionary+JSONString.h"
+
+//datamodel
+#import "JFHttpRequestManager.h"
+#import "Condition.h"
+#import "ConditionModel.h"
+#import "City.h"
+#import "CityModel.h"
+#import "AQI.h"
+#import "AQIModel.h"
+#import "DailyForecast.h"
+#import "DailyForecastModel.h"
+#import "HourlyForecast.h"
+#import "HourlyForecastModel.h"
+#import "Now.h"
+#import "NowModel.h"
+#import "Suggestion.h"
+#import "SuggestionModel.h"
+#import "JFDataSaveManager.h"
+#import "Utility.h"
+
+#endif /* JFWeatherPrefixHeader_pch */

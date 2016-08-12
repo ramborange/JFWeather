@@ -1,0 +1,9 @@
+target 'JFWeather' do
+  pod 'AFNetworking'
+  pod 'SVProgressHUD'
+  pod 'pop'
+  pod 'SDWebImage'
+  pod 'MJRefresh'
+  pod 'FMDB'
+  pod 'Masonry'
+end

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="AQIModel" syncable="YES">
+        <attribute name="aqi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="co" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="no2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="o3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pm10" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pm25" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qlty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="so2" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CityModel" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAdd" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="listIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="prov" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ConditionModel" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt_en" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DailyForecastModel" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="code_d" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="code_n" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dir" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="max" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="min" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcpn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pres" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ss" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt_d" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt_n" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vis" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HourlyForecastModel" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dir" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pres" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tmp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NowModel" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dir" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcpn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pres" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tmp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateLoc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vis" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SuggestionModel" syncable="YES">
+        <attribute name="brf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txt" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AQIModel" positionX="-92" positionY="-72" width="128" height="180"/>
+        <element name="CityModel" positionX="43" positionY="-117" width="128" height="120"/>
+        <element name="ConditionModel" positionX="-234" positionY="-108" width="128" height="105"/>
+        <element name="DailyForecastModel" positionX="-54" positionY="138" width="128" height="330"/>
+        <element name="HourlyForecastModel" positionX="115" positionY="234" width="128" height="193"/>
+        <element name="NowModel" positionX="-218" positionY="174" width="128" height="255"/>
+        <element name="SuggestionModel" positionX="106" positionY="72" width="128" height="103"/>
+    </elements>
+</model>

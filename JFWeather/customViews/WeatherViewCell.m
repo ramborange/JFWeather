@@ -31,7 +31,7 @@
         _weatherScrollview = [[UIScrollView alloc] initWithFrame:self.bounds];
         _weatherScrollview.showsVerticalScrollIndicator = NO;
         [_weatherScrollview setContentSize:CGSizeMake(screenWidth, 1440)];
-        [self addSubview:_weatherScrollview];
+        [self.contentView addSubview:_weatherScrollview];
         
 
         _weatherScrollview.mj_header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];

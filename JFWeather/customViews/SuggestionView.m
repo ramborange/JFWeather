@@ -20,15 +20,21 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _titleLabel = [Utility GetLabelWithFrame:CGRectMake(20, 0, 100, 20) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:20] textAlig:0 textColor:[UIColor darkGrayColor]];
+        _titleLabel = [Utility GetLabelWithFrame:CGRectMake(10, 10, 100, 20) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:20] textAlig:0 textColor:[UIColor darkGrayColor]];
         [self addSubview:_titleLabel];
         
-        _brfLabel = [Utility GetLabelWithFrame:CGRectMake(screenWidth-120, 0, 100, 20) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:2 textColor:[UIColor orangeColor]];
+        _brfLabel = [Utility GetLabelWithFrame:CGRectMake(frame.size.width-110, 10, 100, 20) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:2 textColor:[UIColor orangeColor]];
         [self addSubview:_brfLabel];
         
-        _txtLabel = [Utility GetLabelWithFrame:CGRectMake(20, 20, frame.size.width-30, 60) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:themeColor];
+        _txtLabel = [Utility GetLabelWithFrame:CGRectMake(10, 30, frame.size.width-20, 50) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:themeColor];
         [self addSubview:_txtLabel];
     }
+    [self.layer setBorderColor:RGBA(232, 232, 232, 1).CGColor];
+    [self.layer setBorderWidth:1.0];
+    [self.layer setShadowColor:RGBA(220, 220, 220, 1).CGColor];
+    [self.layer setShadowRadius:1.0];
+    [self.layer setShadowOpacity:1.0];
+    [self.layer setShadowOffset:CGSizeMake(1, 1)];
     return self;
 }
 

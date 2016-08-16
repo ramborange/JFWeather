@@ -48,16 +48,26 @@
 
 #pragma mark - setUp UI
 - (void)setUPWeatherUI {
+    UIView *testV = [[UIView alloc] initWithFrame:CGRectMake(10, 10, screenWidth-20, 265)];
+    testV.backgroundColor = [UIColor whiteColor];
+    [testV.layer setBorderColor:RGBA(232, 232, 232, 1).CGColor];
+    [testV.layer setBorderWidth:1.0];
+    [testV.layer setShadowColor:RGBA(220, 220, 220, 1).CGColor];
+    [testV.layer setShadowRadius:2.0];
+    [testV.layer setShadowOpacity:1.0];
+    [testV.layer setShadowOffset:CGSizeZero];
+    [_weatherScrollview addSubview:testV];
+    
     _condImg = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2-30, 40, 60, 60)];
     [_weatherScrollview addSubview:_condImg];
     
-    _pm25Label = [Utility GetLabelWithFrame:CGRectMake(20, 100, 200, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:themeColor];
+    _pm25Label = [Utility GetLabelWithFrame:CGRectMake(30, 100, 200, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:themeColor];
     [_weatherScrollview addSubview:_pm25Label];
     
     _condTxtLabel = [Utility GetLabelWithFrame:CGRectMake(0, 100, screenWidth, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:24] textAlig:1 textColor:themeColor];
     [_weatherScrollview addSubview:_condTxtLabel];
     
-    _updateLabel = [Utility GetLabelWithFrame:CGRectMake(screenWidth-200, 100, 180, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:2 textColor:themeColor];
+    _updateLabel = [Utility GetLabelWithFrame:CGRectMake(screenWidth-200, 100, 170, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:2 textColor:themeColor];
     [_weatherScrollview addSubview:_updateLabel];
     
     CALayer *layer = [CALayer layer];
@@ -70,15 +80,6 @@
     layer2.backgroundColor =  RGBA(205, 205, 205, 1).CGColor;
     [_weatherScrollview.layer addSublayer:layer2];
     
-    CALayer *layer3 = [CALayer layer];
-    layer3.frame = CGRectMake(15, 320, screenWidth-30, 0.5);
-    layer3.backgroundColor =  RGBA(205, 205, 205, 1).CGColor;
-    [_weatherScrollview.layer addSublayer:layer3];
-    
-    CALayer *layer4 = [CALayer layer];
-    layer4.frame = CGRectMake(15, 780, screenWidth-30, 0.5);
-    layer4.backgroundColor =  RGBA(205, 205, 205, 1).CGColor;
-    [_weatherScrollview.layer addSublayer:layer4];
     
     _flLabel = [Utility GetLabelWithFrame:CGRectMake(0, 160, screenWidth/2, 20) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:1 textColor:themeColor];
     [_weatherScrollview addSubview:_flLabel];
@@ -112,21 +113,29 @@
     _windLabel = [Utility GetLabelWithFrame:CGRectMake(screenWidth/2, 210, screenWidth/2, 40) text:nil font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:1 textColor:themeColor];
     [_weatherScrollview addSubview:_windLabel];
     
-    UILabel *titleLabel = [Utility GetLabelWithFrame:CGRectMake(20, 300, screenWidth, 20) text:@"未来七天天气预报" font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:[UIColor darkGrayColor]];
+    UILabel *titleLabel = [Utility GetLabelWithFrame:CGRectMake(10, 300, 140, 24) text:@"• 未来天气早知道 •" font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:1 textColor:[UIColor whiteColor]];
+    titleLabel.backgroundColor = themeColor;
+    titleLabel.layer.cornerRadius = 12;
+    titleLabel.layer.masksToBounds = YES;
     [_weatherScrollview addSubview:titleLabel];
     
     for (int i=0; i<7; i++) {
-        ForecastView *view = [[ForecastView alloc] initWithFrame:CGRectMake(0, 330+(40+20)*i, screenWidth, 40)];
+        ForecastView *view = [[ForecastView alloc] initWithFrame:CGRectMake(10, 330+(55+5)*i, screenWidth-20, 55)];
         view.tag = 200+i;
+        view.backgroundColor = [UIColor whiteColor];
         [_weatherScrollview addSubview:view];
     }
     
-    UILabel *titleLabel2 = [Utility GetLabelWithFrame:CGRectMake(20, 760, screenWidth, 20) text:@"生活建议小贴士" font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:0 textColor:[UIColor darkGrayColor]];
+    UILabel *titleLabel2 = [Utility GetLabelWithFrame:CGRectMake(10, 770, 140, 24) text:@"• 生活建议小贴士 •" font:[UIFont fontWithName:@"GillSans-Light" size:15] textAlig:1 textColor:[UIColor whiteColor]];
+    titleLabel2.backgroundColor = themeColor;
+    titleLabel2.layer.cornerRadius = 12;
+    titleLabel2.layer.masksToBounds = YES;
     [_weatherScrollview addSubview:titleLabel2];
     
     for (int i=0; i<7; i++) {
-        SuggestionView *view = [[SuggestionView alloc] initWithFrame:CGRectMake(0, 790+(90)*i, screenWidth, 80)];
+        SuggestionView *view = [[SuggestionView alloc] initWithFrame:CGRectMake(10, 800+(90)*i, screenWidth-20, 80)];
         view.tag = 300+i;
+        view.backgroundColor = [UIColor whiteColor];
         [_weatherScrollview addSubview:view];
     }
 //    [self refreshWeaherView];

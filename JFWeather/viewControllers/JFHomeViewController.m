@@ -27,7 +27,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:themeColor,NSFontAttributeName:[UIFont fontWithName:@"GillSans-Light" size:20]}];
+
+    self.navigationController.navigationBar.translucent = NO;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity)];
     leftItem.tintColor = themeColor;
     self.navigationItem.leftBarButtonItem = leftItem;
@@ -45,6 +46,7 @@
     [navTitleBtn setTitleColor:themeColor forState:UIControlStateNormal];
     navTitleBtn.titleLabel.font = [UIFont fontWithName:@"GillSans-Light" size:20];
     navTitleBtn.tag = 987;
+    [navTitleBtn setImage:[UIImage imageNamed:@"more_down"] forState:UIControlStateSelected];
     [navTitleBtn addTarget:self action:@selector(quickSelectCity:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = navTitleBtn;
     
@@ -52,7 +54,7 @@
     layout.minimumLineSpacing = 0.0;
     layout.minimumInteritemSpacing = 0.0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight-64) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.pagingEnabled = YES;
@@ -68,7 +70,7 @@
     [dismissControl addTarget:self action:@selector(hideCitySelectView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:dismissControl];
 
-    _cityTableview = [[UITableView alloc] initWithFrame:CGRectMake(screenWidth/2-80, -240, 160, 300) style:UITableViewStylePlain];
+    _cityTableview = [[UITableView alloc] initWithFrame:CGRectMake(screenWidth/2-80, -300, 160, 300) style:UITableViewStylePlain];
     _cityTableview.showsVerticalScrollIndicator = NO;
     [_cityTableview.layer setBorderColor:RGBA(232, 232, 232, 1).CGColor];
     [_cityTableview.layer setBorderWidth:1.0];
@@ -310,7 +312,7 @@
 - (void)showCitySelectView {
     UIControl *dismissControl = (UIControl *)[self.view viewWithTag:988];
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        _cityTableview.frame = CGRectMake(screenWidth/2-80, 70, 160, 300);
+        _cityTableview.frame = CGRectMake(screenWidth/2-80, 6, 160, 300);
         dismissControl.alpha = 1.0;
     } completion:nil];
 }
@@ -321,7 +323,7 @@
     UIControl *dismissControl = (UIControl *)[self.view viewWithTag:988];
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        _cityTableview.frame = CGRectMake(screenWidth/2-80, -240, 160, 300);
+        _cityTableview.frame = CGRectMake(screenWidth/2-80, -300, 160, 300);
         dismissControl.alpha = 0.0;
     } completion:nil];
 }
